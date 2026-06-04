@@ -2,57 +2,145 @@
 const jobs = [
   {
     role: 'Senior React / React Native Developer',
-    company: 'ICEO — BeOne',
+    companyName: 'ICEO',
+    companyUrl: 'https://iceo.co',
+    projectName: 'BeOne',
+    projectUrl: null,
     type: 'Mobile Banking',
     period: 'Jul 2025 — present',
     location: 'Remote · EU',
-    desc: 'Cross-platform mobile banking app with native Checkout SDK integration, supporting Apple Pay, Google Pay, BLIK, and crypto flows. Extracted the shared network layer into a standalone library used across web and mobile teams.',
-    tags: ['React Native', 'Expo', 'Checkout SDK', 'OpenAPI', 'Kotlin', 'Swift', 'Zustand'],
+    stats: [
+      { value: '5+', label: 'payment methods' },
+      { value: 'iOS · Android · Web', label: '1 shared codebase' },
+      { value: '2', label: 'products share the lib' },
+    ],
+    bullets: [
+      'Architected and shipped a cross-platform mobile banking application (iOS + Android) from a single React Native (Expo) codebase, unifying traditional fiat and crypto payment flows under one consistent transaction model.',
+      'Integrated a native Checkout SDK via Swift (iOS) and Kotlin (Android) bindings — enabling card payments, Apple Pay, Google Pay, and Polish BLIK with full native-layer security compliance, expanding supported payment methods to 5+ without any third-party JS intermediary.',
+      'Identified duplicated logic spread across 2 products — network layer, shared UI components, and arithmetic/math utilities — and consolidated everything into a standalone internal library, enabling zero-friction adoption across web and mobile teams with no breaking changes.',
+      'Designed and implemented an OpenAPI code generation pipeline that fully automates API client creation from the backend spec — reducing new endpoint integration from hours of manual work to minutes, while enforcing compile-time type safety and preventing API contract drift at the CI level.',
+      'Led architecture alignment sessions with web (React) and mobile teams, establishing shared conventions around state management (Zustand + React Query) and codegen workflows, reducing cross-platform context-switch overhead for engineers working across products.',
+      'Wrote E2E tests with Detox and unit tests with Jest, covering all critical banking flows (top-ups, transfers, auth) and enabling confident continuous delivery.',
+    ],
+    tags: ['React Native', 'Expo', 'Checkout SDK', 'OpenAPI Codegen', 'Kotlin', 'Swift', 'Zustand', 'React Query', 'Jest', 'Detox'],
   },
   {
     role: 'Senior React / React Native Developer',
-    company: 'Startupsoft — Tow4Tech',
+    companyName: 'Startupsoft',
+    companyUrl: 'https://www.startupsoft.com',
+    projectName: 'Tow4Tech',
+    projectUrl: 'https://www.tow4tech.com',
     type: 'Fleet Logistics',
     period: 'Oct 2023 — Jul 2025',
     location: 'Remote · US',
-    desc: 'Built real-time GPS tracking and interactive live maps for driver–manager coordination. Developed scalable multi-account web architecture with role-based access control.',
-    tags: ['React', 'React Native', 'Google Maps API', 'WebSockets', 'Zustand', 'Codegen'],
+    stats: [
+      { value: '<1s', label: 'live location refresh' },
+      { value: 'Web · iOS · Android', label: '3 platforms shipped' },
+      { value: 'Multi-tenant', label: 'RBAC architecture' },
+    ],
+    bullets: [
+      'Designed and delivered a cross-platform tow truck dispatch platform covering web, iOS, and Android — with a shared codebase strategy that kept all three surfaces in sync without diverging feature sets.',
+      'Built WebSocket-powered interactive live maps with sub-second location refresh, enabling dispatchers to track all active vehicles on a single map and assign jobs to drivers in real time without manual refresh or page reload.',
+      'Engineered a multi-tenant web architecture with fine-grained role-based access control (driver, dispatcher, manager, owner), allowing multiple independent company accounts to operate securely from a single deployment without data leakage between tenants.',
+      'Implemented background GPS tracking on mobile with battery-optimised polling strategies, delivering reliable real-time positioning data even on low-end Android devices operating in rural areas with intermittent connectivity.',
+      'Introduced a codegen-based API layer synchronised from a single OpenAPI spec, keeping web and mobile clients in lock-step and eliminating the category of bugs caused by endpoint drift between platforms.',
+      'Established and maintained a team code review process that raised code quality, standardised patterns across web and mobile, and onboarded new engineers faster.',
+    ],
+    tags: ['React', 'React Native', 'Google Maps API', 'WebSockets', 'Zustand', 'React Query', 'OpenAPI Codegen', 'TypeScript'],
   },
   {
     role: 'Lead React / React Native Developer',
-    company: 'NDA — Public Security App',
+    companyName: 'NDA',
+    companyUrl: null,
+    projectName: 'Public Security App',
+    projectUrl: null,
     type: 'Public Safety',
     period: 'Apr 2023 — Oct 2023',
     location: 'Remote · US',
-    desc: 'Led the mobile team. Built a custom native audio manager and persistent BLE management system for Flic hardware buttons. Mentored a developer transitioning from C# to React Native.',
-    tags: ['React Native', 'Swift', 'Kotlin', 'BLE', 'Redux', 'Team Lead'],
+    stats: [
+      { value: '1', label: 'engineer mentored (C# → RN)' },
+      { value: '2', label: 'custom native modules built' },
+      { value: 'BLE', label: '10+ devices managed' },
+    ],
+    bullets: [
+      'Led the mobile development team end-to-end — owning technical direction, sprint planning, and feature delivery for a security-critical application used by public safety professionals in the field.',
+      'Designed and built a custom native audio manager (Swift + Kotlin) that dynamically routed audio input and output channels at the OS level, enabling precise control of earpieces, microphones, and speakers in noisy, high-stakes environments.',
+      'Engineered a persistent BLE (Bluetooth Low Energy) device management system capable of maintaining simultaneous connections to 10+ hardware peripherals (Flic buttons, earpieces, accessories) with robust auto-reconnect logic and full device state recovery after signal loss.',
+      'Integrated Flic hardware buttons as hands-free remote control input devices, allowing officers to trigger app actions without touching the screen — a critical UX requirement for safe field operation.',
+      'Mentored a developer transitioning from C# to React Native full-time — covering component architecture, navigation, native module bridging, and performance debugging — accelerating their productive contribution to the team within weeks.',
+      'Drove code review culture across the team, catching architectural issues early and maintaining consistency across a security-sensitive codebase.',
+    ],
+    tags: ['React Native', 'Swift', 'Kotlin', 'Java', 'Obj-C', 'BLE', 'Redux', 'Jest', 'Team Lead'],
   },
   {
     role: 'Senior Front-End Developer',
-    company: 'Geniusee — Argo Fintech',
+    companyName: 'Geniusee',
+    companyUrl: 'https://geniusee.com',
+    projectName: 'Ricult',
+    projectUrl: 'https://www.linkedin.com/company/ricult/',
     type: 'AgriFintech',
     period: 'Apr 2022 — Apr 2023',
     location: 'Kyiv, Ukraine',
-    desc: 'Offline-capable farm management app with multifunctional Mapbox map for crop planning. Developed cross-platform components and full E2E test coverage with Detox.',
-    tags: ['React', 'React Native', 'Next.js', 'Mapbox', 'TypeScript', 'Detox'],
+    stats: [
+      { value: '100%', label: 'offline-first capability' },
+      { value: 'Web + Mobile', label: 'shared component lib' },
+      { value: 'Detox + Jest', label: 'full E2E + unit coverage' },
+    ],
+    bullets: [
+      'Developed a cross-platform agricultural management platform (React Native + Next.js) used by farmers and field agents in developing economies to access financial services, loans, and crop planning tools — with a primary user base in regions with intermittent or no internet connectivity.',
+      'Engineered full offline-first functionality from scratch: all core features operate without a network connection, with data queued locally using an async storage layer and transparently synced to the backend when connectivity is restored — critical for rural users.',
+      'Built a feature-rich Mapbox map layer supporting farm boundary drawing, crop assignment by parcel, planting history visualisation, and multi-farm management for agents overseeing hundreds of individual farmers from a single view.',
+      'Architected a shared component library consumed by both the React Native mobile app and the Next.js web app, reducing UI duplication to near zero and enabling features to be built once and shipped to both platforms simultaneously.',
+      'Achieved full E2E test coverage with Detox (all critical user flows: registration, loan application, map interactions, sync) and comprehensive unit coverage with Jest — establishing a safety net that enabled confident refactors and sustained delivery velocity.',
+      'Conducted regular cross-team code reviews between mobile and web engineers, maintaining high engineering standards and propagating patterns across the stack.',
+    ],
+    tags: ['React', 'React Native', 'Next.js', 'TypeScript', 'Redux', 'Mapbox', 'Jest', 'Detox'],
   },
   {
     role: 'Senior React Native Developer',
-    company: 'Velas Network AG — BitOrbit',
+    companyName: 'Velas Network AG',
+    companyUrl: 'https://velas.com/en',
+    projectName: 'BitOrbit',
+    projectUrl: 'https://bitorbit.ai',
     type: 'Blockchain / NFT',
     period: 'Dec 2020 — Apr 2022',
     location: 'Kyiv, Ukraine',
-    desc: 'Social network and NFT marketplace on a blockchain platform reaching 10k+ active users. Integrated Telegram, Viber, WhatsApp SDKs natively and built crypto wallet with smart contract interaction.',
-    tags: ['React Native', 'Web3.js', 'ERC-20/721/1155', 'TDLib', 'Java', 'Swift', 'MobX'],
+    stats: [
+      { value: '10,000+', label: 'peak active users' },
+      { value: '3', label: 'social networks unified' },
+      { value: 'ERC-20/721/1155', label: 'smart contracts' },
+    ],
+    bullets: [
+      'Co-built a blockchain-native social network and NFT marketplace on the Velas chain from zero to 10,000+ monthly active users at peak — one of the first platforms to combine messaging, social feeds, NFT trading, and digital asset ownership in a single mobile app.',
+      'Unified Telegram, Viber, and WhatsApp messaging into one React Native application through deep native SDK integration using TDLib (Telegram), Java, Swift, and C++ — handling real-time message sync, push notifications, and media playback across all three platforms simultaneously.',
+      'Implemented the full on-chain interaction layer using Web3.js: ERC-20 token transfers, ERC-721 NFT minting and listing, ERC-1155 multi-token operations, token swaps, and wallet-to-wallet transactions — all from within the app without redirecting to external services. Integrated a custom smart contract governing the NFT exchange and an on-chain royalty system, ensuring creators automatically received a percentage of every secondary sale.',
+      'Designed and shipped a self-custody crypto wallet with real-time balance tracking, full transaction history, and in-app token swaps; separately built a staking web app from the ground up using strict TDD — every feature covered by tests before a single line of implementation.',
+      'Developed content digitisation flows allowing users to mint their own photos, videos, and posts as NFTs and list them on the marketplace without leaving the app — removing the technical barrier to digital asset creation for non-crypto-native users.',
+    ],
+    tags: ['React Native', 'React', 'TypeScript', 'MobX', 'Web3.js', 'ERC-20/721/1155', 'TDLib', 'Java', 'Obj-C', 'Swift', 'Detox', 'Jest'],
   },
   {
     role: 'Middle+ React Native Developer',
-    company: 'Andersen Lab — First Bank of Nigeria',
-    type: 'Mobile Banking',
+    companyName: 'Andersen Lab',
+    companyUrl: 'https://andersenlab.com',
+    projectName: 'First Bank of Nigeria & VerveLife',
+    projectUrl: null,
+    type: 'Mobile Banking · Fitness',
     period: 'Nov 2019 — Dec 2020',
     location: 'Kyiv, Ukraine',
-    desc: 'React Native mobile banking app for African markets. Built native bridge for AquireSDK, integrated REST APIs, and implemented offline USSD functionality.',
-    tags: ['React Native', 'Java', 'Swift', 'Redux'],
+    stats: [
+      { value: '2', label: 'apps shipped' },
+      { value: '2', label: 'native bridges built' },
+      { value: 'USSD', label: 'offline banking flows' },
+    ],
+    bullets: [
+      'Contributed to two production React Native applications for African markets — First Bank of Nigeria (mobile banking) and VerveLife (fitness tracking) — both serving millions of users across regions with highly variable connectivity and device fragmentation.',
+      'Engineered a native bridge for AquireSDK in Java (Android) and Swift (iOS), exposing PCI-compliant payment and identity verification flows to the React Native layer — the only path to meeting the bank\'s security requirements on both platforms.',
+      'Built the core banking UI and API integration layer: account overview, transaction history, money transfers, bill payment flows, and balance inquiry — following a strict design system and handling complex async state for concurrent account operations.',
+      'Implemented offline USSD functionality enabling users to check balances, initiate transfers, and access core services entirely without internet connectivity — essential for Nigerian rural markets where data coverage is unreliable.',
+      'For VerveLife, implemented a custom native Android bridge running as a persistent Headless.js background service that continuously reads device sensors (accelerometer, gyroscope), combines real-time motion data with user biometrics (age, height, weight) to calculate burned calories, active time, and classify activity type, then streams all results live to the React Native layer — keeping the tracker fully operational even with the screen off.',
+    ],
+    tags: ['React Native', 'Java', 'Swift', 'Redux', 'Headless.js', 'REST APIs'],
   },
 ];
 ---
@@ -63,7 +151,7 @@ const jobs = [
       <h2 class="section-title">Experience</h2>
     </div>
     <div class="jobs">
-      {jobs.map((job, i) => (
+      {jobs.map((job) => (
         <div class="job">
           <div class="job-left">
             <span class="job-type">{job.type}</span>
@@ -73,9 +161,30 @@ const jobs = [
           <div class="job-right">
             <div class="job-header">
               <h3 class="job-role">{job.role}</h3>
-              <span class="job-company">{job.company}</span>
+              <span class="job-company">
+                {job.companyUrl
+                  ? <a href={job.companyUrl} target="_blank" rel="noopener noreferrer" class="co-link">{job.companyName}</a>
+                  : job.companyName
+                }
+                {job.projectName && (
+                  <> — {job.projectUrl
+                    ? <a href={job.projectUrl} target="_blank" rel="noopener noreferrer" class="co-link">{job.projectName}</a>
+                    : job.projectName
+                  }</>
+                )}
+              </span>
             </div>
-            <p class="job-desc">{job.desc}</p>
+            <div class="job-stats">
+              {job.stats.map(s => (
+                <div class="stat">
+                  <span class="stat-value">{s.value}</span>
+                  <span class="stat-label">{s.label}</span>
+                </div>
+              ))}
+            </div>
+            <ul class="job-bullets">
+              {job.bullets.map(b => <li>{b}</li>)}
+            </ul>
             <div class="job-tags">
               {job.tags.map(t => <span class="tag">{t}</span>)}
             </div>
@@ -116,15 +225,13 @@ const jobs = [
 .jobs {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 .job {
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 2rem;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
   border-top: 1px solid var(--border);
-  transition: background .2s;
 }
 .job:last-child {
   border-bottom: 1px solid var(--border);
@@ -153,7 +260,7 @@ const jobs = [
 .job-right {
   display: flex;
   flex-direction: column;
-  gap: .75rem;
+  gap: 1rem;
 }
 .job-header {
   display: flex;
@@ -169,16 +276,62 @@ const jobs = [
   font-size: 13px;
   color: var(--text-2);
 }
-.job-desc {
+.co-link {
+  color: var(--text-2);
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 3px;
+  transition: color .2s, text-decoration-color .2s;
+}
+.co-link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+.job-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 8px 14px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: .02em;
+}
+.stat-label {
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: .02em;
+}
+.job-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  padding-left: 1.1rem;
   font-size: 14px;
   color: var(--text-2);
-  line-height: 1.75;
+  line-height: 1.8;
   font-weight: 300;
+}
+.job-bullets li::marker {
+  color: var(--accent);
+  font-size: 10px;
 }
 .job-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin-top: .25rem;
 }
 .tag {
   font-size: 11px;
