@@ -7,6 +7,23 @@
 }
 
 :root {
+  --bg: #faf9f7;
+  --bg-2: #f3f1ed;
+  --bg-3: #ebe8e2;
+  --border: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.15);
+  --text: #1a1916;
+  --text-2: #6b6860;
+  --text-3: #a8a49d;
+  --accent: #b8860b;
+  --accent-dim: rgba(184,134,11,0.10);
+  --nav-bg: rgba(250,249,247,0.85);
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+[data-theme="dark"] {
   --bg: #0c0c0b;
   --bg-2: #141413;
   --bg-3: #1c1c1a;
@@ -17,9 +34,7 @@
   --text-3: #5c5a55;
   --accent: #d4a853;
   --accent-dim: rgba(212,168,83,0.12);
-  --font-serif: 'DM Serif Display', Georgia, serif;
-  --font-sans: 'DM Sans', sans-serif;
-  --font-mono: 'DM Mono', monospace;
+  --nav-bg: rgba(12,12,11,0.85);
 }
 
 html {
