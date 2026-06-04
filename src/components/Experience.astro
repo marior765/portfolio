@@ -1,0 +1,196 @@
+---
+const jobs = [
+  {
+    role: 'Senior React / React Native Developer',
+    company: 'ICEO — BeOne',
+    type: 'Mobile Banking',
+    period: 'Jul 2025 — present',
+    location: 'Remote · EU',
+    desc: 'Cross-platform mobile banking app with native Checkout SDK integration, supporting Apple Pay, Google Pay, BLIK, and crypto flows. Extracted the shared network layer into a standalone library used across web and mobile teams.',
+    tags: ['React Native', 'Expo', 'Checkout SDK', 'OpenAPI', 'Kotlin', 'Swift', 'Zustand'],
+  },
+  {
+    role: 'Senior React / React Native Developer',
+    company: 'Startupsoft — Tow4Tech',
+    type: 'Fleet Logistics',
+    period: 'Oct 2023 — Jul 2025',
+    location: 'Remote · US',
+    desc: 'Built real-time GPS tracking and interactive live maps for driver–manager coordination. Developed scalable multi-account web architecture with role-based access control.',
+    tags: ['React', 'React Native', 'Google Maps API', 'WebSockets', 'Zustand', 'Codegen'],
+  },
+  {
+    role: 'Lead React / React Native Developer',
+    company: 'NDA — Public Security App',
+    type: 'Public Safety',
+    period: 'Apr 2023 — Oct 2023',
+    location: 'Remote · US',
+    desc: 'Led the mobile team. Built a custom native audio manager and persistent BLE management system for Flic hardware buttons. Mentored a developer transitioning from C# to React Native.',
+    tags: ['React Native', 'Swift', 'Kotlin', 'BLE', 'Redux', 'Team Lead'],
+  },
+  {
+    role: 'Senior Front-End Developer',
+    company: 'Geniusee — Argo Fintech',
+    type: 'AgriFintech',
+    period: 'Apr 2022 — Apr 2023',
+    location: 'Kyiv, Ukraine',
+    desc: 'Offline-capable farm management app with multifunctional Mapbox map for crop planning. Developed cross-platform components and full E2E test coverage with Detox.',
+    tags: ['React', 'React Native', 'Next.js', 'Mapbox', 'TypeScript', 'Detox'],
+  },
+  {
+    role: 'Senior React Native Developer',
+    company: 'Velas Network AG — BitOrbit',
+    type: 'Blockchain / NFT',
+    period: 'Dec 2020 — Apr 2022',
+    location: 'Kyiv, Ukraine',
+    desc: 'Social network and NFT marketplace on a blockchain platform reaching 10k+ active users. Integrated Telegram, Viber, WhatsApp SDKs natively and built crypto wallet with smart contract interaction.',
+    tags: ['React Native', 'Web3.js', 'ERC-20/721/1155', 'TDLib', 'Java', 'Swift', 'MobX'],
+  },
+  {
+    role: 'Middle+ React Native Developer',
+    company: 'Andersen Lab — First Bank of Nigeria',
+    type: 'Mobile Banking',
+    period: 'Nov 2019 — Dec 2020',
+    location: 'Kyiv, Ukraine',
+    desc: 'React Native mobile banking app for African markets. Built native bridge for AquireSDK, integrated REST APIs, and implemented offline USSD functionality.',
+    tags: ['React Native', 'Java', 'Swift', 'Redux'],
+  },
+];
+---
+<section class="exp" id="experience">
+  <div class="inner">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="jobs">
+      {jobs.map((job, i) => (
+        <div class="job">
+          <div class="job-left">
+            <span class="job-type">{job.type}</span>
+            <span class="job-period">{job.period}</span>
+            <span class="job-location">{job.location}</span>
+          </div>
+          <div class="job-right">
+            <div class="job-header">
+              <h3 class="job-role">{job.role}</h3>
+              <span class="job-company">{job.company}</span>
+            </div>
+            <p class="job-desc">{job.desc}</p>
+            <div class="job-tags">
+              {job.tags.map(t => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.exp {
+  padding: 6rem 2rem;
+  border-top: 1px solid var(--border);
+}
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: .1em;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+.jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.job {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  transition: background .2s;
+}
+.job:last-child {
+  border-bottom: 1px solid var(--border);
+}
+.job-left {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  padding-top: 2px;
+}
+.job-type {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.job-period {
+  font-size: 12px;
+  color: var(--text-2);
+}
+.job-location {
+  font-size: 12px;
+  color: var(--text-3);
+}
+.job-right {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.job-header {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+.job-role {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+}
+.job-company {
+  font-size: 13px;
+  color: var(--text-2);
+}
+.job-desc {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.75;
+  font-weight: 300;
+}
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-3);
+  letter-spacing: .03em;
+}
+@media (max-width: 700px) {
+  .job { grid-template-columns: 1fr; gap: 1rem; }
+  .job-left { flex-direction: row; flex-wrap: wrap; gap: .5rem 1rem; }
+}
+</style>

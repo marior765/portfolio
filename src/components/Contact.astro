@@ -1,0 +1,133 @@
+---
+---
+<section class="contact" id="contact">
+  <div class="inner">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Let's work together</h2>
+    </div>
+    <div class="contact-body">
+      <p class="contact-desc">
+        Open to senior remote contracts in mobile and front-end engineering.
+        Available across the EEA time zones.
+      </p>
+      <a href="mailto:d.bohatyrchuk@gmail.com" class="contact-link">
+        d.bohatyrchuk@gmail.com <span class="arrow">→</span>
+      </a>
+    </div>
+    <div class="links">
+      <a href="https://github.com" target="_blank" rel="noopener" class="ext-link">
+        GitHub <span class="arrow">↗</span>
+      </a>
+      <a href="https://www.linkedin.com/in/dbohatyrchuk" target="_blank" rel="noopener" class="ext-link">
+        LinkedIn <span class="arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-name">Denys Bohatyrchuk</span>
+    <span class="footer-copy">Built with Astro · {new Date().getFullYear()}</span>
+  </div>
+</footer>
+
+<style>
+.contact {
+  padding: 6rem 2rem 5rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg-2);
+}
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: .1em;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+.contact-body {
+  margin-bottom: 2.5rem;
+}
+.contact-desc {
+  font-size: 16px;
+  color: var(--text-2);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+  line-height: 1.8;
+}
+.contact-link {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-style: italic;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: .25rem;
+  transition: color .2s, border-color .2s;
+}
+.contact-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.arrow {
+  font-style: normal;
+  font-family: var(--font-sans);
+}
+.links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.ext-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+  letter-spacing: .05em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color .2s;
+}
+.ext-link:hover { color: var(--text-2); }
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+}
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+}
+</style>

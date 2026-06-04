@@ -1,0 +1,121 @@
+---
+const groups = [
+  {
+    label: 'Core',
+    skills: ['JavaScript', 'TypeScript', 'React', 'React Native', 'Expo / EAS', 'Next.js'],
+  },
+  {
+    label: 'State & Data',
+    skills: ['Zustand', 'Redux', 'MobX', 'React Query', 'OpenAPI Codegen'],
+  },
+  {
+    label: 'Native',
+    skills: ['Swift', 'Kotlin', 'Java', 'Objective-C', 'BLE / Hardware SDKs'],
+  },
+  {
+    label: 'Blockchain',
+    skills: ['Web3.js', 'ERC-20 / ERC-721 / ERC-1155', 'Smart Contracts', 'Crypto Wallets'],
+  },
+  {
+    label: 'Testing & Tooling',
+    skills: ['Jest', 'Detox (E2E)', 'Git', 'Storybook', 'Cursor / LLM tooling'],
+  },
+  {
+    label: 'Maps & Real-time',
+    skills: ['Google Maps API', 'Mapbox', 'WebSockets', 'GPS / Location'],
+  },
+];
+---
+<section class="skills" id="skills">
+  <div class="inner">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Skills</h2>
+    </div>
+    <div class="groups">
+      {groups.map(g => (
+        <div class="group">
+          <span class="group-label">{g.label}</span>
+          <div class="pills">
+            {g.skills.map(s => <span class="pill">{s}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.skills {
+  padding: 6rem 2rem;
+  border-top: 1px solid var(--border);
+}
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: .1em;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.group {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  align-items: start;
+}
+.group:last-child {
+  border-bottom: 1px solid var(--border);
+}
+.group-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding-top: 4px;
+}
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pill {
+  font-size: 13px;
+  color: var(--text-2);
+  padding: 5px 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-2);
+  transition: border-color .2s, color .2s;
+  cursor: default;
+}
+.pill:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+@media (max-width: 600px) {
+  .group { grid-template-columns: 1fr; gap: .75rem; }
+}
+</style>

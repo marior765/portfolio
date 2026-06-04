@@ -1,0 +1,149 @@
+---
+---
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      Available for remote contracts
+    </div>
+    <h1 class="hero-title">
+      Building apps<br />
+      <em>people actually</em><br />
+      want to use.
+    </h1>
+    <p class="hero-sub">
+      Senior React / React Native engineer with 8+ years shipping cross-platform products
+      across fintech, crypto, logistics, and public security. Based in Kraków — working globally.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get in touch</a>
+      <a href="#experience" class="btn-ghost">See my work ↓</a>
+    </div>
+    <div class="hero-meta">
+      <span>d.bohatyrchuk@gmail.com</span>
+      <span class="sep">·</span>
+      <span>Kraków, Poland</span>
+      <span class="sep">·</span>
+      <span>EEA / Remote</span>
+    </div>
+  </div>
+  <div class="hero-lines" aria-hidden="true">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</section>
+
+<style>
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 2rem 4rem;
+}
+.hero-lines {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-evenly;
+  pointer-events: none;
+  z-index: 0;
+}
+.line {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--border) 30%, var(--border) 70%, transparent);
+  opacity: .5;
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  letter-spacing: .08em;
+  margin-bottom: 2rem;
+  padding: 6px 14px;
+  border: 1px solid var(--accent-dim);
+  border-radius: 20px;
+  background: var(--accent-dim);
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .3; }
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 1.05;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  letter-spacing: -.02em;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-sub {
+  font-size: 16px;
+  color: var(--text-2);
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 4px;
+  letter-spacing: .04em;
+  transition: opacity .2s;
+}
+.btn-primary:hover { opacity: .85; }
+.btn-ghost {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid var(--border-strong);
+  color: var(--text-2);
+  font-size: 13px;
+  border-radius: 4px;
+  letter-spacing: .04em;
+  transition: color .2s, border-color .2s;
+}
+.btn-ghost:hover { color: var(--text); border-color: var(--text-3); }
+.hero-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.sep { color: var(--border-strong); }
+</style>

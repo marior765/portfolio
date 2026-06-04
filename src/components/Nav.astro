@@ -1,0 +1,75 @@
+---
+---
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">DB</a>
+    <nav class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="mailto:d.bohatyrchuk@gmail.com" class="nav-cta">Hire me</a>
+  </div>
+</header>
+
+<style>
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  background: rgba(12,12,11,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: .05em;
+  margin-right: auto;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  font-size: 13px;
+  color: var(--text-2);
+  transition: color .2s;
+}
+.nav-links a:hover {
+  color: var(--text);
+}
+.nav-cta {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  color: var(--text);
+  transition: background .2s, border-color .2s;
+  letter-spacing: .03em;
+}
+.nav-cta:hover {
+  background: var(--border);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+}
+</style>

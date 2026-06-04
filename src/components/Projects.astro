@@ -1,0 +1,142 @@
+---
+const projects = [
+  {
+    num: '01',
+    title: 'BeOne — Mobile Banking',
+    category: 'Fintech · React Native · Expo',
+    desc: 'Cross-platform mobile banking app supporting traditional and crypto payment flows. Integrated native Checkout SDK for card, Apple Pay, Google Pay, and BLIK. Built a shared network library reused across web and mobile.',
+    highlight: '10+ payment methods',
+  },
+  {
+    num: '02',
+    title: 'Tow4Tech — Fleet Tracking',
+    category: 'Logistics · React · Maps',
+    desc: 'Real-time GPS tracking platform with live interactive maps for towing operations. Built driver–manager coordination tools with WebSocket-powered live updates and multi-account role-based access.',
+    highlight: 'Real-time GPS & dispatch',
+  },
+  {
+    num: '03',
+    title: 'BitOrbit — NFT Social Network',
+    category: 'Blockchain · Web3 · React Native',
+    desc: 'Social network and NFT marketplace built on the Velas blockchain. Unified Telegram, Viber, and WhatsApp SDKs natively using TDLib, Java, and Swift. Reached 10k+ active users at peak.',
+    highlight: '10k+ peak active users',
+  },
+  {
+    num: '04',
+    title: 'Argo — AgriFintech Platform',
+    category: 'Fintech · Mapbox · Offline-first',
+    desc: 'Offline-capable agricultural management app for farmers in developing economies. Built a multifunctional Mapbox-based map for crop and farm planning with offline sync.',
+    highlight: 'Offline-first architecture',
+  },
+];
+---
+<section class="projects" id="projects">
+  <div class="inner">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <div class="grid">
+      {projects.map(p => (
+        <div class="card">
+          <div class="card-top">
+            <span class="card-num">{p.num}</span>
+            <span class="card-highlight">{p.highlight}</span>
+          </div>
+          <h3 class="card-title">{p.title}</h3>
+          <span class="card-cat">{p.category}</span>
+          <p class="card-desc">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.projects {
+  padding: 6rem 2rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg-2);
+}
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: .1em;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--border);
+}
+.card {
+  background: var(--bg-2);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  transition: background .2s;
+}
+.card:hover {
+  background: var(--bg-3);
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .25rem;
+}
+.card-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+}
+.card-highlight {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: .05em;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+}
+.card-cat {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: .04em;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-top: .25rem;
+}
+</style>

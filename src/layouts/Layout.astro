@@ -1,0 +1,26 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Denys Bohatyrchuk — Senior Mobile & Front-End Engineer',
+  description = 'Senior React / React Native developer with 8+ years of experience in fintech, crypto, logistics, and cross-platform mobile development.'
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
