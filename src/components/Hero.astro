@@ -45,6 +45,10 @@
   position: relative;
   overflow: hidden;
   padding: 6rem 2rem 4rem;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 .hero-lines {
   position: absolute;
@@ -78,7 +82,7 @@
   padding: 6px 14px;
   border: 1px solid var(--accent-dim);
   border-radius: 20px;
-  background: var(--accent-dim);
+  background: var(--bg);
 }
 .dot {
   width: 6px;
@@ -126,6 +130,7 @@
   font-weight: 500;
   border-radius: 4px;
   letter-spacing: .04em;
+  text-decoration: none;
   transition: opacity .2s;
 }
 .btn-primary:hover { opacity: .85; }
@@ -137,16 +142,23 @@
   font-size: 13px;
   border-radius: 4px;
   letter-spacing: .04em;
-  transition: color .2s, border-color .2s;
+  background: var(--bg);
+  text-decoration: none;
+  transition: color .2s, border-color .2s, background .2s;
 }
 .btn-ghost:hover { color: var(--text); border-color: var(--text-3); }
 .hero-meta {
   font-family: var(--font-mono);
   font-size: 12px;
+  font-weight: 500;
   color: var(--text-3);
-  display: flex;
+  display: inline-flex;
   gap: .75rem;
   flex-wrap: wrap;
+  padding: 6px 14px;
+  border: 1px solid var(--accent-dim);
+  border-radius: 20px;
+  background: var(--bg);
 }
 .sep { color: var(--border-strong); }
 </style>
