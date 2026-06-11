@@ -1,7 +1,7 @@
 ---
 const jobs = [
   {
-    role: 'Senior React / React Native Developer',
+    role: 'Senior Software Engineer, Mobile (iOS/Android)',
     companyName: 'ICEO',
     companyUrl: 'https://iceo.co',
     projectName: 'BeOne',
@@ -10,14 +10,14 @@ const jobs = [
     period: 'Jul 2025 — present',
     location: 'Remote · EU',
     stats: [
-      { value: '5+', label: 'payment methods' },
+      { value: '4', label: 'payment methods' },
       { value: 'iOS · Android · Web', label: '1 shared codebase' },
-      { value: '2', label: 'products share the lib' },
+      { value: '3', label: 'projects share the lib' },
     ],
     bullets: [
-      'Architected and shipped a cross-platform mobile banking application (iOS + Android) from a single React Native (Expo) codebase, unifying traditional fiat and crypto payment flows under one consistent transaction model.',
-      'Integrated a native Checkout SDK via Swift (iOS) and Kotlin (Android) bindings — enabling card payments, Apple Pay, Google Pay, and Polish BLIK with full native-layer security compliance, expanding supported payment methods to 5+ without any third-party JS intermediary.',
-      'Identified duplicated logic spread across 2 products — network layer, shared UI components, and arithmetic/math utilities — and consolidated everything into a standalone internal library, enabling zero-friction adoption across web and mobile teams with no breaking changes.',
+      'Architected and built a cross-platform mobile banking application (iOS + Android) from a single React Native (Expo) codebase, unifying traditional fiat and crypto payment flows, and delivered to internal beta.',
+      'Integrated a native Checkout SDK via Swift (iOS) and Kotlin (Android) bindings — enabling card payments, Apple Pay, Google Pay, and Polish BLIK (4 payment methods) with full native-layer security compliance, without any third-party JS intermediary.',
+      'Identified duplicated logic spread across 3 company projects — network layer, shared UI components, and arithmetic/math utilities — and consolidated everything into a standalone internal library, enabling zero-friction adoption across web and mobile teams with no breaking changes.',
       'Designed and implemented an OpenAPI code generation pipeline that fully automates API client creation from the backend spec — reducing new endpoint integration from hours of manual work to minutes, while enforcing compile-time type safety and preventing API contract drift at the CI level.',
       'Led architecture alignment sessions with web (React) and mobile teams, establishing shared conventions around state management (Zustand + React Query) and codegen workflows, reducing cross-platform context-switch overhead for engineers working across products.',
       'Wrote E2E tests with Detox and unit tests with Jest, covering all critical banking flows (top-ups, transfers, auth) and enabling confident continuous delivery.',
@@ -25,7 +25,7 @@ const jobs = [
     tags: ['React Native', 'Expo', 'Checkout SDK', 'OpenAPI Codegen', 'Kotlin', 'Swift', 'Zustand', 'React Query', 'Jest', 'Detox'],
   },
   {
-    role: 'Senior React / React Native Developer',
+    role: 'Senior Software Engineer, Mobile (iOS/Android)',
     companyName: 'Startupsoft',
     companyUrl: 'https://www.startupsoft.com',
     projectName: 'Tow4Tech',
@@ -34,13 +34,13 @@ const jobs = [
     period: 'Oct 2023 — Jul 2025',
     location: 'Remote · US',
     stats: [
-      { value: '<1s', label: 'live location refresh' },
+      { value: '<1s', label: 'live location refresh' }, // TODO: confirm actual refresh behavior — batched socket events flushed every 5s, not sub-second
       { value: 'Web · iOS · Android', label: '3 platforms shipped' },
       { value: 'Multi-tenant', label: 'RBAC architecture' },
     ],
     bullets: [
       'Designed and delivered a cross-platform tow truck dispatch platform covering web, iOS, and Android — with a shared codebase strategy that kept all three surfaces in sync without diverging feature sets.',
-      'Built WebSocket-powered interactive live maps with sub-second location refresh, enabling dispatchers to track all active vehicles on a single map and assign jobs to drivers in real time without manual refresh or page reload.',
+      'Built WebSocket-powered interactive live maps with frequent location updates, enabling dispatchers to track all active vehicles on a single map and assign jobs to drivers in real time without manual refresh or page reload.', // TODO: confirm actual update frequency
       'Engineered a multi-tenant web architecture with fine-grained role-based access control (driver, dispatcher, manager, owner), allowing multiple independent company accounts to operate securely from a single deployment without data leakage between tenants.',
       'Implemented background GPS tracking on mobile with battery-optimised polling strategies, delivering reliable real-time positioning data even on low-end Android devices operating in rural areas with intermittent connectivity.',
       'Introduced a codegen-based API layer synchronised from a single OpenAPI spec, keeping web and mobile clients in lock-step and eliminating the category of bugs caused by endpoint drift between platforms.',
@@ -49,7 +49,7 @@ const jobs = [
     tags: ['React', 'React Native', 'Google Maps API', 'WebSockets', 'Zustand', 'React Query', 'OpenAPI Codegen', 'TypeScript'],
   },
   {
-    role: 'Lead React / React Native Developer',
+    role: 'Lead Software Engineer, Mobile (iOS/Android)',
     companyName: 'NDA',
     companyUrl: null,
     projectName: 'Public Security App',
@@ -60,12 +60,12 @@ const jobs = [
     stats: [
       { value: '1', label: 'engineer mentored (C# → RN)' },
       { value: '2', label: 'custom native modules built' },
-      { value: 'BLE', label: '10+ devices managed' },
+      { value: 'BLE', label: 'up to 3 devices' },
     ],
     bullets: [
       'Led the mobile development team end-to-end — owning technical direction, sprint planning, and feature delivery for a security-critical application used by public safety professionals in the field.',
       'Designed and built a custom native audio manager (Swift + Kotlin) that dynamically routed audio input and output channels at the OS level, enabling precise control of earpieces, microphones, and speakers in noisy, high-stakes environments.',
-      'Engineered a persistent BLE (Bluetooth Low Energy) device management system capable of maintaining simultaneous connections to 10+ hardware peripherals (Flic buttons, earpieces, accessories) with robust auto-reconnect logic and full device state recovery after signal loss.',
+      'Engineered a persistent BLE (Bluetooth Low Energy) device management system capable of maintaining simultaneous connections to up to 3 devices (Flic button, walkie-talkie, headset) with robust auto-reconnect logic and full device state recovery after signal loss.',
       'Integrated Flic hardware buttons as hands-free remote control input devices, allowing officers to trigger app actions without touching the screen — a critical UX requirement for safe field operation.',
       'Mentored a developer transitioning from C# to React Native full-time — covering component architecture, navigation, native module bridging, and performance debugging — accelerating their productive contribution to the team within weeks.',
       'Drove code review culture across the team, catching architectural issues early and maintaining consistency across a security-sensitive codebase.',
@@ -82,22 +82,22 @@ const jobs = [
     period: 'Apr 2022 — Apr 2023',
     location: 'Kyiv, Ukraine',
     stats: [
-      { value: '100%', label: 'offline-first capability' },
+      { value: '~70%', label: 'offline-first capability' },
       { value: 'Web + Mobile', label: 'shared component lib' },
-      { value: 'Detox + Jest', label: 'full E2E + unit coverage' },
+      { value: '~90%', label: 'Jest coverage (shared lib)' },
     ],
     bullets: [
       'Developed a cross-platform agricultural management platform (React Native + Next.js) used by farmers and field agents in developing economies to access financial services, loans, and crop planning tools — with a primary user base in regions with intermittent or no internet connectivity.',
-      'Engineered full offline-first functionality from scratch: all core features operate without a network connection, with data queued locally using an async storage layer and transparently synced to the backend when connectivity is restored — critical for rural users.',
+      'Built offline-first functionality for ~70% of the app: critical features operate without a network connection, with data queued locally using an async storage layer and transparently synced to the backend when connectivity is restored — essential for rural users.',
       'Built a feature-rich Mapbox map layer supporting farm boundary drawing, crop assignment by parcel, planting history visualisation, and multi-farm management for agents overseeing hundreds of individual farmers from a single view.',
       'Architected a shared component library consumed by both the React Native mobile app and the Next.js web app, reducing UI duplication to near zero and enabling features to be built once and shipped to both platforms simultaneously.',
-      'Achieved full E2E test coverage with Detox (all critical user flows: registration, loan application, map interactions, sync) and comprehensive unit coverage with Jest — establishing a safety net that enabled confident refactors and sustained delivery velocity.',
+      'Raised test coverage to ~90% (Jest) across shared monorepo modules to catch side-effect regressions during feature work — establishing a safety net that enabled confident refactors and sustained delivery velocity.',
       'Conducted regular cross-team code reviews between mobile and web engineers, maintaining high engineering standards and propagating patterns across the stack.',
     ],
     tags: ['React', 'React Native', 'Next.js', 'TypeScript', 'Redux', 'Mapbox', 'Jest', 'Detox'],
   },
   {
-    role: 'Senior React Native Developer',
+    role: 'Senior Software Engineer',
     companyName: 'Velas Network AG',
     companyUrl: 'https://velas.com/en',
     projectName: 'BitOrbit',
@@ -106,13 +106,13 @@ const jobs = [
     period: 'Dec 2020 — Apr 2022',
     location: 'Kyiv, Ukraine',
     stats: [
-      { value: '10,000+', label: 'peak active users' },
-      { value: '3', label: 'social networks unified' },
+      { value: '10K', label: 'daily active users (DAU)' },
+      { value: 'C++ TDLib', label: 'native bridge' },
       { value: 'ERC-20/721/1155', label: 'smart contracts' },
     ],
     bullets: [
-      'Co-built a blockchain-native social network and NFT marketplace on the Velas chain from zero to 10,000+ monthly active users at peak — one of the first platforms to combine messaging, social feeds, NFT trading, and digital asset ownership in a single mobile app.',
-      'Unified Telegram, Viber, and WhatsApp messaging into one React Native application through deep native SDK integration using TDLib (Telegram), Java, Swift, and C++ — handling real-time message sync, push notifications, and media playback across all three platforms simultaneously.',
+      'Co-built a blockchain-native social network and NFT marketplace on the Velas chain, growing to 10K daily active users — one of the first platforms to combine messaging, social feeds, NFT trading, and digital asset ownership in a single mobile app.',
+      'Integrated Telegram messaging natively via TDLib — independently researching and building the full native bridge: compiling the C++ library via CMake into dynamic libraries and exposing a native interface with JS-side callbacks (~75% native C++/Swift/Java work) — handling real-time message sync, push notifications, and media playback with no prior art to reference.',
       'Implemented the full on-chain interaction layer using Web3.js: ERC-20 token transfers, ERC-721 NFT minting and listing, ERC-1155 multi-token operations, token swaps, and wallet-to-wallet transactions — all from within the app without redirecting to external services. Integrated a custom smart contract governing the NFT exchange and an on-chain royalty system, ensuring creators automatically received a percentage of every secondary sale.',
       'Designed and shipped a self-custody crypto wallet with real-time balance tracking, full transaction history, and in-app token swaps; separately built a staking web app from the ground up using strict TDD — every feature covered by tests before a single line of implementation.',
       'Developed content digitisation flows allowing users to mint their own photos, videos, and posts as NFTs and list them on the marketplace without leaving the app — removing the technical barrier to digital asset creation for non-crypto-native users.',
@@ -134,8 +134,8 @@ const jobs = [
       { value: 'USSD', label: 'offline banking flows' },
     ],
     bullets: [
-      'Contributed to two production React Native applications for African markets — First Bank of Nigeria (mobile banking) and VerveLife (fitness tracking) — both serving millions of users across regions with highly variable connectivity and device fragmentation.',
-      'Engineered a native bridge for AquireSDK in Java (Android) and Swift (iOS), exposing PCI-compliant payment and identity verification flows to the React Native layer — the only path to meeting the bank\'s security requirements on both platforms.',
+      'Contributed to two production React Native applications for African markets — First Bank of Nigeria (mobile banking) and VerveLife (fitness tracking) — for one of Africa\'s largest banks across regions with highly variable connectivity and device fragmentation.',
+      'Engineered a native bridge for Acquire SDK in Java (Android) and Swift (iOS), exposing PCI-compliant payment and identity verification flows to the React Native layer — the only path to meeting the bank\'s security requirements on both platforms.', // TODO: verify Acquire SDK details (developer.acquire.io is customer engagement: chat/cobrowse/video, not payments)
       'Built the core banking UI and API integration layer: account overview, transaction history, money transfers, bill payment flows, and balance inquiry — following a strict design system and handling complex async state for concurrent account operations.',
       'Implemented offline USSD functionality enabling users to check balances, initiate transfers, and access core services entirely without internet connectivity — essential for Nigerian rural markets where data coverage is unreliable.',
       'For VerveLife, implemented a custom native Android bridge running as a persistent Headless.js background service that continuously reads device sensors (accelerometer, gyroscope), combines real-time motion data with user biometrics (age, height, weight) to calculate burned calories, active time, and classify activity type, then streams all results live to the React Native layer — keeping the tracker fully operational even with the screen off.',
