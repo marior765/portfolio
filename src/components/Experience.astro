@@ -15,12 +15,11 @@ const jobs = [
       { value: '3', label: 'projects share the lib' },
     ],
     bullets: [
-      'Architected and built a cross-platform mobile banking application (iOS + Android) from a single React Native (Expo) codebase, unifying traditional fiat and crypto payment flows, and delivered to internal beta.',
-      'Integrated a native Checkout SDK via Swift (iOS) and Kotlin (Android) bindings — enabling card payments, Apple Pay, Google Pay, and Polish BLIK (4 payment methods) with full native-layer security compliance, without any third-party JS intermediary.',
-      'Identified duplicated logic spread across 3 company projects — network layer, shared UI components, and arithmetic/math utilities — and consolidated everything into a standalone internal library, enabling zero-friction adoption across web and mobile teams with no breaking changes.',
-      'Designed and implemented an OpenAPI code generation pipeline that fully automates API client creation from the backend spec — reducing new endpoint integration from hours of manual work to minutes, while enforcing compile-time type safety and preventing API contract drift at the CI level.',
-      'Led architecture alignment sessions with web (React) and mobile teams, establishing shared conventions around state management (Zustand + React Query) and codegen workflows, reducing cross-platform context-switch overhead for engineers working across products.',
-      'Wrote E2E tests with Detox and unit tests with Jest, covering all critical banking flows (top-ups, transfers, auth) and enabling confident continuous delivery.',
+      'Shipped all 4 payment rails (card, Apple Pay, Google Pay, and Poland\'s BLIK) into an Expo banking app despite the vendor shipping no React Native SDK, by building a custom native Expo module wrapping Checkout.com\'s iOS and Android SDKs with a typed JS bridge (~60% native Swift/Kotlin).',
+      'Removed ~30% duplicated code across 3 company projects, by extracting shared layers — typed API client, money-precision arithmetic, design tokens, and utilities — into reusable libraries adopted company-wide.',
+      'Established a single source of truth for API clients, by building the full OpenAPI codegen pipeline from scratch as my own initiative.',
+      'Built the team\'s entire CI/CD pipeline from zero: quality gates, test runs with reporting, AI-assisted code and security review, branch policies, and namespace-aware publishing that releases only the changed module.',
+      'Cut code-review overhead, by adding automated AI review (Rovo) at the PR stage and a script that auto-generates PR templates (title, description, change summary) via the GitLab API.',
     ],
     tags: ['React Native', 'Expo', 'Checkout SDK', 'OpenAPI Codegen', 'Kotlin', 'Swift', 'Zustand', 'React Query', 'Jest', 'Detox'],
   },
@@ -34,17 +33,17 @@ const jobs = [
     period: 'Oct 2023 — Jul 2025',
     location: 'Remote · US',
     stats: [
-      { value: '<1s', label: 'live location refresh' }, // TODO: confirm actual refresh behavior — batched socket events flushed every 5s, not sub-second
-      { value: 'Web · iOS · Android', label: '3 platforms shipped' },
-      { value: 'Multi-tenant', label: 'RBAC architecture' },
+      { value: '~74%', label: 'of commits (founding engineer)' },
+      { value: '4 apps', label: '1 monorepo' },
+      { value: '130+', label: 'generated API models' },
     ],
     bullets: [
-      'Designed and delivered a cross-platform tow truck dispatch platform covering web, iOS, and Android — with a shared codebase strategy that kept all three surfaces in sync without diverging feature sets.',
-      'Built WebSocket-powered interactive live maps with frequent location updates, enabling dispatchers to track all active vehicles on a single map and assign jobs to drivers in real time without manual refresh or page reload.', // TODO: confirm actual update frequency
-      'Engineered a multi-tenant web architecture with fine-grained role-based access control (driver, dispatcher, manager, owner), allowing multiple independent company accounts to operate securely from a single deployment without data leakage between tenants.',
-      'Implemented background GPS tracking on mobile with battery-optimised polling strategies, delivering reliable real-time positioning data even on low-end Android devices operating in rural areas with intermittent connectivity.',
-      'Introduced a codegen-based API layer synchronised from a single OpenAPI spec, keeping web and mobile clients in lock-step and eliminating the category of bugs caused by endpoint drift between platforms.',
-      'Established and maintained a team code review process that raised code quality, standardised patterns across web and mobile, and onboarded new engineers faster.',
+      'Architected a TypeScript monorepo (pnpm + Turborepo) powering 4 client apps — manager, dispatcher, and driver web clients plus React Native (Expo) apps — from shared design-system and data-layer packages, as founding engineer authoring ~74% of commits (3× the next contributor).',
+      'Eliminated frontend/backend contract bugs by building a contract-first API layer auto-generating 130+ typed models and 12 service clients from an OpenAPI spec, with React Query hooks and optimistic cache updates.',
+      'Built a real-time dispatch experience tracking many moving vehicles on a live map, by combining WebSockets (with exponential-backoff reconnection) and Google Maps with marker clustering, routing, and geocoding.',
+      'Kept the live map smooth under high-frequency updates, by batching socket events into a buffer flushed on fill or every 5s, instead of re-rendering per message.',
+      'Engineered multi-tenant role-based access control (driver, dispatcher, manager, owner), allowing independent company accounts to operate securely from a single deployment.',
+      'Implemented background GPS tracking with restart-time polling and Firebase Cloud Messaging push notifications, surfacing driver key-point arrivals and status changes without the app open.',
     ],
     tags: ['React', 'React Native', 'Google Maps API', 'WebSockets', 'Zustand', 'React Query', 'OpenAPI Codegen', 'TypeScript'],
   },
@@ -63,12 +62,11 @@ const jobs = [
       { value: 'BLE', label: 'up to 3 devices' },
     ],
     bullets: [
-      'Led the mobile development team end-to-end — owning technical direction, sprint planning, and feature delivery for a security-critical application used by public safety professionals in the field.',
-      'Designed and built a custom native audio manager (Swift + Kotlin) that dynamically routed audio input and output channels at the OS level, enabling precise control of earpieces, microphones, and speakers in noisy, high-stakes environments.',
-      'Engineered a persistent BLE (Bluetooth Low Energy) device management system capable of maintaining simultaneous connections to up to 3 devices (Flic button, walkie-talkie, headset) with robust auto-reconnect logic and full device state recovery after signal loss.',
-      'Integrated Flic hardware buttons as hands-free remote control input devices, allowing officers to trigger app actions without touching the screen — a critical UX requirement for safe field operation.',
-      'Mentored a developer transitioning from C# to React Native full-time — covering component architecture, navigation, native module bridging, and performance debugging — accelerating their productive contribution to the team within weeks.',
-      'Drove code review culture across the team, catching architectural issues early and maintaining consistency across a security-sensitive codebase.',
+      'Led a 3-person mobile team on a production app operated by police personnel, by owning technical direction: library-vs-build decisions, incremental refactor strategy (legacy React → modern), branch policy, and code review.',
+      'Brought a Xamarin developer to full autonomy in ~2 months, by mentoring them through the React Native transition and mobile-specific architecture, after which they shipped independently.',
+      'Met a strict no-open-source security mandate for a police-operated app, by implementing a custom native audio manager in Swift/Obj-C rather than third-party libraries.',
+      'Enabled officers to control hardware without opening the app — mute/unmute, switch output source — by implementing BLE and wiring it into iOS audio routing across up to 3 devices (Flic button, walkie-talkie, headset).',
+      'De-risked releases on a live public-safety app, by introducing percentage-based rollouts and feature flags so changes could ship incrementally and roll back safely.',
     ],
     tags: ['React Native', 'Swift', 'Kotlin', 'Java', 'Obj-C', 'BLE', 'Redux', 'Jest', 'Team Lead'],
   },
@@ -87,12 +85,9 @@ const jobs = [
       { value: '~90%', label: 'Jest coverage (shared lib)' },
     ],
     bullets: [
-      'Developed a cross-platform agricultural management platform (React Native + Next.js) used by farmers and field agents in developing economies to access financial services, loans, and crop planning tools — with a primary user base in regions with intermittent or no internet connectivity.',
-      'Built offline-first functionality for ~70% of the app: critical features operate without a network connection, with data queued locally using an async storage layer and transparently synced to the backend when connectivity is restored — essential for rural users.',
-      'Built a feature-rich Mapbox map layer supporting farm boundary drawing, crop assignment by parcel, planting history visualisation, and multi-farm management for agents overseeing hundreds of individual farmers from a single view.',
-      'Architected a shared component library consumed by both the React Native mobile app and the Next.js web app, reducing UI duplication to near zero and enabling features to be built once and shipped to both platforms simultaneously.',
-      'Raised test coverage to ~90% (Jest) across shared monorepo modules to catch side-effect regressions during feature work — establishing a safety net that enabled confident refactors and sustained delivery velocity.',
-      'Conducted regular cross-team code reviews between mobile and web engineers, maintaining high engineering standards and propagating patterns across the stack.',
+      'Built offline-first functionality covering ~70% of the app for rural, low-connectivity users, by implementing local storage (MMKV), offline optimistic updates, and a persisted query queue replayed on reconnect with capped retries.',
+      'Sustained stability across a large monorepo where multiple apps shared modules, by raising test coverage to ~90% (Jest) to catch side-effect regressions during feature work.',
+      'Contributed cross-platform features (React, Next.js, React Native) to a production agritech platform serving a large smallholder-farmer base, as a senior IC in a ~20-engineer org.',
     ],
     tags: ['React', 'React Native', 'Next.js', 'TypeScript', 'Redux', 'Mapbox', 'Jest', 'Detox'],
   },
@@ -111,11 +106,12 @@ const jobs = [
       { value: 'ERC-20/721/1155', label: 'smart contracts' },
     ],
     bullets: [
-      'Co-built a blockchain-native social network and NFT marketplace on the Velas chain, growing to 10K daily active users — one of the first platforms to combine messaging, social feeds, NFT trading, and digital asset ownership in a single mobile app.',
-      'Integrated Telegram messaging natively via TDLib — independently researching and building the full native bridge: compiling the C++ library via CMake into dynamic libraries and exposing a native interface with JS-side callbacks (~75% native C++/Swift/Java work) — handling real-time message sync, push notifications, and media playback with no prior art to reference.',
-      'Implemented the full on-chain interaction layer using Web3.js: ERC-20 token transfers, ERC-721 NFT minting and listing, ERC-1155 multi-token operations, token swaps, and wallet-to-wallet transactions — all from within the app without redirecting to external services. Integrated a custom smart contract governing the NFT exchange and an on-chain royalty system, ensuring creators automatically received a percentage of every secondary sale.',
-      'Designed and shipped a self-custody crypto wallet with real-time balance tracking, full transaction history, and in-app token swaps; separately built a staking web app from the ground up using strict TDD — every feature covered by tests before a single line of implementation.',
-      'Developed content digitisation flows allowing users to mint their own photos, videos, and posts as NFTs and list them on the marketplace without leaving the app — removing the technical barrier to digital asset creation for non-crypto-native users.',
+      'Brought Telegram messaging into a React Native app with no prior art to reference, by independently researching and building a C++→native bridge: compiling TDLib via CMake into dynamic libraries and exposing a native interface with JS-side callbacks (~75% native C++/Swift/Java work).',
+      'Powered on-chain trading, royalties, and NFT lotteries across 3 blockchains (Ethereum, Velas, Solana), by implementing 5 smart-contract integrations — ERC-20/721/1155, an escrow-based royalty contract, and a subscription contract.',
+      'Built an NFT minting and staking web app solo in ~3 weeks, and contributed to the team-built crypto wallet, by developing test-first with Web3.js.',
+      'Eliminated scroll jank across the app\'s many list-heavy screens (feeds, chats, token and transaction lists), raising scroll performance from ~15 FPS drops to a steady 60 FPS, by replacing list rendering with a RecyclerListView wrapper that enforces item sizing to optimize React Native\'s virtualization.',
+      'Standardized icon usage codebase-wide, by building a type-safe Icon component (Strategy pattern) that parses the icon folder into a TS union type, rejecting invalid names at compile time.',
+      'Owned the entire native layer for an app that reached 10K daily active users, as the sole engineer responsible for native integration.',
     ],
     tags: ['React Native', 'React', 'TypeScript', 'MobX', 'Web3.js', 'ERC-20/721/1155', 'TDLib', 'Java', 'Obj-C', 'Swift', 'Detox', 'Jest'],
   },
@@ -159,26 +155,21 @@ const jobs = [
             <span class="job-location">{job.location}</span>
           </div>
           <div class="job-right">
-            <button type="button" class="job-header" aria-expanded="false">
-              <span class="job-header-text">
-                <h3 class="job-role">{job.role}</h3>
-                <span class="job-company">
-                  {job.companyUrl
-                    ? <a href={job.companyUrl} target="_blank" rel="noopener noreferrer" class="co-link">{job.companyName}</a>
-                    : job.companyName
-                  }
-                  {job.projectName && (
-                    <> — {job.projectUrl
-                      ? <a href={job.projectUrl} target="_blank" rel="noopener noreferrer" class="co-link">{job.projectName}</a>
-                      : job.projectName
-                    }</>
-                  )}
-                </span>
+            <div class="job-header">
+              <h3 class="job-role">{job.role}</h3>
+              <span class="job-company">
+                {job.companyUrl
+                  ? <a href={job.companyUrl} target="_blank" rel="noopener noreferrer" class="co-link">{job.companyName}</a>
+                  : job.companyName
+                }
+                {job.projectName && (
+                  <> — {job.projectUrl
+                    ? <a href={job.projectUrl} target="_blank" rel="noopener noreferrer" class="co-link">{job.projectName}</a>
+                    : job.projectName
+                  }</>
+                )}
               </span>
-              <svg class="job-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
+            </div>
             <div class="job-body">
               <div class="job-stats">
                 {job.stats.map(s => (
@@ -202,17 +193,6 @@ const jobs = [
   </div>
 </section>
 
-<script>
-  document.querySelectorAll<HTMLButtonElement>(".job-header").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      // Don't toggle when following a company/project link
-      if ((e.target as HTMLElement).closest("a")) return;
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!expanded));
-      btn.closest(".job")?.classList.toggle("open", !expanded);
-    });
-  });
-</script>
 
 <style>
 .exp {
@@ -236,7 +216,7 @@ const jobs = [
   letter-spacing: .1em;
 }
 .section-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 2.5rem;
   font-weight: 400;
   letter-spacing: -.02em;
@@ -283,60 +263,15 @@ const jobs = [
 }
 .job-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  cursor: pointer;
-  color: inherit;
-  font: inherit;
-}
-.job-header-text {
-  display: flex;
   flex-direction: column;
   gap: .2rem;
-}
-.job-chevron {
-  flex-shrink: 0;
-  color: var(--text-3);
-  transition: transform .25s ease, color .2s;
-}
-.job-header:hover .job-chevron {
-  color: var(--accent);
-}
-.job.open .job-chevron {
-  transform: rotate(180deg);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
 }
 .job-body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  position: relative;
-  max-height: 160px;
-  overflow: hidden;
-  transition: max-height .35s ease;
-}
-.job-body::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 64px;
-  background: linear-gradient(to bottom, transparent, var(--bg));
-  pointer-events: none;
-  transition: opacity .25s ease;
-}
-.job.open .job-body {
-  max-height: 2000px;
-}
-.job.open .job-body::after {
-  opacity: 0;
 }
 .job-role {
   font-size: 15px;

@@ -4,7 +4,7 @@ const projects = [
     num: '01',
     title: 'BeOne — Mobile Banking',
     category: 'Fintech · React Native · Expo',
-    desc: 'Cross-platform banking app (iOS + Android) from a single React Native codebase, supporting traditional and crypto payment flows — delivered to internal beta. Integrated native Checkout SDK for card, Apple Pay, Google Pay, and BLIK. Consolidated duplicated logic spread across 3 company projects — network layer, shared UI components, and arithmetic/math utilities — into a standalone internal library reused across web and mobile, then automated all API client generation via OpenAPI codegen, reducing new endpoint integration to minutes with compile-time type safety.',
+    desc: 'Shipped all 4 payment rails (card, Apple Pay, Google Pay, BLIK) into an Expo banking app by building a custom native Expo module wrapping Checkout.com SDKs (~60% native Swift/Kotlin). Removed ~30% duplicated code across 3 company projects into reusable libraries (API client, money-precision arithmetic, design tokens). Established OpenAPI codegen pipeline reducing endpoint integration from hours to minutes. Built team\'s entire CI/CD pipeline: quality gates, test runs with reporting, AI-assisted code/security review, and namespace-aware module publishing.',
     metrics: ['4 payment methods', 'iOS · Android · Web', '3 projects share lib'],
     highlight: '4 payment methods',
   },
@@ -12,9 +12,9 @@ const projects = [
     num: '02',
     title: 'Tow4Tech — Fleet Tracking',
     category: 'Logistics · React · Maps',
-    desc: 'Real-time tow truck dispatch platform spanning web, iOS, and Android. Built WebSocket-powered live maps with frequent vehicle location updates, enabling dispatchers to track and assign jobs in real time with zero manual refresh. Engineered a multi-tenant architecture with fine-grained RBAC (driver, dispatcher, manager, owner) supporting multiple independent company accounts from a single deployment. Background GPS tracking on mobile uses battery-optimised polling to maintain positioning accuracy even on low-end devices.',
-    metrics: ['<1s location refresh', 'Multi-tenant RBAC', 'Web · iOS · Android'],
-    highlight: 'Real-time GPS & dispatch',
+    desc: 'TypeScript monorepo (pnpm + Turborepo) powering a real-time tow truck dispatch platform spanning manager web, driver web, dispatcher web, and React Native (Expo) apps — built as founding engineer authoring ~74% of commits. Built contract-first API layer auto-generating 130+ typed models from OpenAPI spec. WebSocket-powered live maps with optimized event batching enable dispatchers to track and assign jobs in real time. Multi-tenant RBAC (driver, dispatcher, manager, owner) supports independent company accounts from a single deployment with background GPS tracking for positioning accuracy on low-end devices.',
+    metrics: ['~74% of commits', '4 apps / 1 monorepo', '130+ API models'],
+    highlight: 'Founding engineer monorepo',
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/us/app/tow-operator/id6472660203' },
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.tow4tech.driver&pcampaignid=web_share' },
@@ -24,15 +24,15 @@ const projects = [
     num: '03',
     title: 'BitOrbit — NFT Social Network',
     category: 'Blockchain · Web3 · React Native',
-    desc: 'Blockchain-native social network and NFT marketplace on the Velas chain, growing to 10K daily active users — one of the first platforms to merge messaging, social content, and NFT trading in one mobile app. Integrated Telegram messaging natively via TDLib — independently researching and building the full native bridge (C++/Java/Swift) with no prior art to reference. Implemented full ERC-20/721/1155 smart contract interactions, token swaps, and a content minting flow. Separately shipped a self-custody crypto wallet and a staking web app built with strict TDD.',
-    metrics: ['10K daily active users', 'C++ TDLib bridge', 'ERC-20 · ERC-721 · ERC-1155'],
+    desc: 'Blockchain-native social network and NFT marketplace on Velas chain reaching 10K daily active users. Built C++→native bridge for Telegram messaging via TDLib (CMake compilation to dynamic libraries, native interface with JS callbacks, ~75% native C++/Swift/Java work). Powered on-chain trading/royalties/lotteries across 3 blockchains via 5 smart-contract integrations (ERC-20/721/1155, escrow-based royalty contract, subscription contract). Shipped self-custody crypto wallet and staking web app with strict TDD. Eliminated scroll jank (15→60 FPS) using RecyclerListView item sizing optimization. Standardized icon usage with type-safe Icon component (Strategy pattern).',
+    metrics: ['10K daily active users', 'C++ TDLib bridge', '15 → 60 FPS optimization', 'ERC-20 · ERC-721 · ERC-1155'],
     highlight: '10K daily active users',
   },
   {
     num: '04',
     title: 'Ricult — AgriFintech Platform',
-    category: 'Fintech · Mapbox · Offline-first',
-    desc: 'Cross-platform agricultural management app (React Native + Next.js) for farmers and field agents in developing economies — where most users operate without reliable internet. Built offline-first functionality for ~70% of the app: critical features work without connectivity, with data queued locally and synced transparently when the network returns. Built a feature-rich Mapbox map supporting farm boundary drawing, crop assignment by parcel, and multi-farm management for agents overseeing hundreds of farmers. Sustained stability with ~90% Jest unit test coverage across shared monorepo modules.',
+    category: 'Fintech · Offline-first · Monorepo',
+    desc: 'Cross-platform agricultural management app (React Native + Next.js) for farmers and field agents in developing economies — where most users operate without reliable internet. Built offline-first functionality for ~70% of the app using local storage (MMKV), offline optimistic updates, and persisted query queue replayed on reconnect. Sustained stability across a large monorepo where multiple apps shared modules by raising test coverage to ~90% (Jest) to catch side-effect regressions during feature work.',
     metrics: ['~70% offline-first', 'Web + Mobile shared lib', '~90% Jest coverage'],
     highlight: 'Offline-first architecture',
     links: [
@@ -147,7 +147,7 @@ const projects = [
   letter-spacing: .1em;
 }
 .section-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 2.5rem;
   font-weight: 400;
   letter-spacing: -.02em;
